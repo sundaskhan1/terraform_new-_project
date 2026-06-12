@@ -23,12 +23,8 @@ jobs:
           aws-access-key-id: ${{ secrets.AWS_ACCESS_KEY_ID }}
           aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
           aws-region: us-east-2
-          # Ensure this happens AFTER credentials are set
-      - name: Terraform Init
-        run: terraform init -reconfigure -input=false
+          - name: Terraform Init and Apply
         working-directory: ./environments/dev
-
-      - name: Terraform Apply
-        run: terraform apply -auto-approve -input=false -var="key_name=soch-key-trf" -var="bucket_name=project-soch-s3bucket"
-        working-directory: ./environments/dev
-     
+        run: |
+          terraform init -reconfigure -input=false
+          terraform apply -auto-approve -input=false -var="key_name=soch-key-trf" -var="bucket_name=project-soch-s3bucket"
