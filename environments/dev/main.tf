@@ -9,7 +9,7 @@ terraform {
 }
 provider "aws" {
   region  = var.aws_region
-  profile = "sundus_aws-admin"
+  
 }
 
 data "aws_vpc" "default" {
