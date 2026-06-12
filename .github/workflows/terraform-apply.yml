@@ -31,5 +31,5 @@ jobs:
         working-directory: ./environments/dev
 
       - name: Terraform Apply
-        run: terraform apply -auto-approve
+        run: terraform apply -auto-approve -input=falses
         working-directory: ./environments/dev
