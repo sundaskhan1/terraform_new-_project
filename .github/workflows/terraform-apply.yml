@@ -32,5 +32,6 @@ jobs:
           terraform apply -auto-approve -input=false \
             -var="key_name=soch-key-trf" \
             -var="bucket_name=project-soch-s3bucket" \
-            -var="ami_id=YOUR_AMI_ID" \
-            -var="instance_type=t3.micro"
+            -var="ami_id=ami-0c55b159cbfafe1f0" \
+            -var="instance_type=t2.micro" \
+            -var="aws_region=us-east-2"
