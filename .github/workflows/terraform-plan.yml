@@ -8,8 +8,10 @@ jobs:
       - uses: actions/checkout@v4
       - name: Terraform Init
         run: terraform init
+        working-directory: ./modules/ec2
       - name: Terraform Plan
         run: terraform plan
+        working-directory: ./modules/ec2
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
           AWS_SECRET_ACCESS_KEY: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
