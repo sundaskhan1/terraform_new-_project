@@ -29,4 +29,7 @@ jobs:
         working-directory: ./environments/dev
         run: |
           terraform init -reconfigure -input=false
-          terraform apply -auto-approve -input=false -var="key_name=soch-key-trf" -var="bucket_name=project-soch-s3bucket"
+          terraform apply -auto-approve -input=false \
+            -var="key_name=soch-key-trf" \
+            -var="bucket_name=project-soch-s3bucket" \
+            -var="ami_id=ami-0c6ac5f2fed2981b0"
